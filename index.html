@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Video Showcase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Your Video Showreel</h1>
+    <p>Sound Design · Game Audio · Interactive Media</p>
+  </header>
+
+  <main class="video-grid">
+    <!-- Tile 1 -->
+    <div class="video-tile">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+                title="Video 1"
+                frameborder="0" 
+                allowfullscreen></iframe>
+      </div>
+      <h3>Project Title 1</h3>
+    </div>
+
+    <!-- Tile 2 -->
+    <div class="video-tile">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                title="Video 2"
+                frameborder="0" 
+                allowfullscreen></iframe>
+      </div>
+      <h3>Project Title 2</h3>
+    </div>
+
+    <!-- Add more tiles as needed -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name — <a href="mailto:you@example.com">Contact</a></p>
+  </footer>
+
+  <script>
+  const tiles = document.querySelectorAll('.video-tile');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  tiles.forEach(tile => {
+    tile.style.opacity = 0;
+    tile.style.transform = 'translateY(20px)';
+    tile.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(tile);
+  });
+  </script>
+
+
+</body>
+</html>
