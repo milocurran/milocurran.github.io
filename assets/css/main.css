@@ -1074,12 +1074,7 @@ input, select, textarea {
 		width: 100%;
 		z-index: 10001;
 	}
-		.panel img {
-			width: 100%;
-  			height: auto;
-  			display: block;
-		}
-		
+
 		.panel.active {
 			-moz-transform: translateY(1px);
 			-webkit-transform: translateY(1px);
